@@ -1,0 +1,1791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="API Documentation" version="2.8.2">
+  <partials/>
+  <file path="REST/Remote/Deployment/Deployment_Service.php" generated-path="REST.Remote.Deployment.Deployment_Service.html" hash="c78d0e70ad7c7f365f3fb28bf05c9dca" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Abstract_Rest_Command">\jBpm4Php\Services\Abstract_Rest_Command</namespace-alias>
+    <class final="false" abstract="false" namespace="jBpm4Php\REST\Remote\Deployment" line="25" package="Default">
+      <extends>\jBpm4Php\Services\Abstract_Rest_Command</extends>
+      <name>Deployment_Service</name>
+      <full_name>\jBpm4Php\REST\Remote\Deployment\Deployment_Service</full_name>
+      <docblock line="25">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="25" description="Default"/>
+        <tag name="inherited_from" description="\jBpm4Php\Services\Abstract_Rest_Command" refers="\jBpm4Php\Services\Abstract_Rest_Command" link="/classes/jBpm4Php.Services.Abstract_Rest_Command.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Deployment" line="25" package="Default">
+        <name>$engine</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::engine</full_name>
+        <default></default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="33" package="Default">
+        <name>get_deployed_units</name>
+        <full_name>\jBpm4Php\REST\Remote\Deployment\Deployment_Service::get_deployed_units()</full_name>
+        <docblock line="33">
+          <description>Returns a list of all the available deployed instances in a JaxbDeploymentUnitList instance.</description>
+          <long-description></long-description>
+          <tag name="access" line="33" description="public"/>
+          <tag name="return" line="33" description="JaxbDeploymentUnitList" type="\jBpm4Php\REST\Remote\Deployment\A">
+            <type>\jBpm4Php\REST\Remote\Deployment\A</type>
+          </tag>
+          <tag name="link" line="33" description="JaxbDeploymentUnitList" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="47" package="Default">
+        <name>get_deployment</name>
+        <full_name>\jBpm4Php\REST\Remote\Deployment\Deployment_Service::get_deployment()</full_name>
+        <docblock line="47">
+          <description>Returns a JaxbDeploymentUnit instance containing th e information (including the configuration) of the deployment unit.</description>
+          <long-description></long-description>
+          <tag name="access" line="47" description="public"/>
+          <tag name="param" line="47" description="" type="string" variable="$deployment_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="47" description="JaxbDeploymentUnit" type="\jBpm4Php\REST\Remote\Deployment\A">
+            <type>\jBpm4Php\REST\Remote\Deployment\A</type>
+          </tag>
+          <tag name="link" line="47" description="JaxbDeploymentUnit" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$deployment_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="62" package="Default">
+        <name>deploy</name>
+        <full_name>\jBpm4Php\REST\Remote\Deployment\Deployment_Service::deploy()</full_name>
+        <docblock line="62">
+          <description>Deploys the deployment unit referenced by the deploymentId.</description>
+          <long-description></long-description>
+          <tag name="access" line="62" description="public"/>
+          <tag name="param" line="62" description="" type="string" variable="$deployment_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="62" description="&lt;p&gt;Deployment descriptor as a key-value pair: array('audit-mode'=&gt;'JMS', 'runtime-strategy'=&gt;'PER_PROCESS_INSTANCE');&lt;/p&gt;" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="62" description="JaxbDeploymentJobResult" type="\jBpm4Php\REST\Remote\Deployment\A">
+            <type>\jBpm4Php\REST\Remote\Deployment\A</type>
+          </tag>
+          <tag name="link" line="62" description="JaxbDeploymentJobResult" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$deployment_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="82" package="Default">
+        <name>undeploy</name>
+        <full_name>\jBpm4Php\REST\Remote\Deployment\Deployment_Service::undeploy()</full_name>
+        <docblock line="82">
+          <description>Undeploys the deployment unit referenced by the deploymentId.</description>
+          <long-description></long-description>
+          <tag name="access" line="82" description="public"/>
+          <tag name="param" line="82" description="" type="string" variable="$deployment_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="82" description="JaxbDeploymentJobResult" type="\jBpm4Php\REST\Remote\Deployment\A">
+            <type>\jBpm4Php\REST\Remote\Deployment\A</type>
+          </tag>
+          <tag name="link" line="82" description="JaxbDeploymentJobResult" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$deployment_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__construct()</full_name>
+        <docblock line="32">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="32" description="public"/>
+          <tag name="param" line="32" description="" type="\jBpm4Php\Services\Runtime_Engine" variable="$engine">
+            <type>\jBpm4Php\Services\Runtime_Engine</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$engine</name>
+          <default></default>
+          <type>\jBpm4Php\Services\Runtime_Engine</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="43" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__get()</full_name>
+        <docblock line="43">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="43" description="public"/>
+          <tag name="param" line="43" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="43" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Deployment" line="58" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::execute()</full_name>
+        <docblock line="58">
+          <description>Makes REST calls to the execution server. All calls are described on the documentation.</description>
+          <long-description></long-description>
+          <tag name="link" line="58" description="Documentation" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html"/>
+          <tag name="access" line="58" description="public"/>
+          <tag name="param" line="58" description="" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="58" description="" type="boolean" variable="$do_post">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="58" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="58" description="" type="string" variable="$xml_body">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="JSON response" type="\jBpm4Php\Services\A">
+            <type>\jBpm4Php\Services\A</type>
+          </tag>
+          <tag name="inherited_from" description="\jBpm4Php\Services\Rest_Command_Interface::execute()" refers="\jBpm4Php\Services\Rest_Command_Interface::execute()" link="/classes/jBpm4Php.Services.Rest_Command_Interface.html#method_execute"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$xml_body</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Deployment" line="93" package="Default">
+        <name>parse_query_map_parameters</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::parse_query_map_parameters()</full_name>
+        <docblock line="93">
+          <description>Convert map associative array into query map parameters.</description>
+          <long-description></long-description>
+          <tag name="access" line="93" description="private"/>
+          <tag name="param" line="93" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="93" description="map parameters" type="\jBpm4Php\Services\Query">
+            <type>\jBpm4Php\Services\Query</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$with_prefix</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="25" code="PPC:ERR-50005">No summary for class \jBpm4Php\REST\Remote\Deployment\Deployment_Service</error>
+    </parse_markers>
+    <source>eJzVVW1v4kYQ/lx+xSgiAiLAd7m2H/JCy3FwR0QIMtBrpEhobQ94E3vX2l3zolN+VX9C/1hnzWty5JJIvatqKSJrzzwz88wzs2e/JWGSc46OcnAEDZksFJ+EBo7fvP0FWqgEE4GEDvf+/ktxaW3s3yDkGsY8QqDfhCkDcgy375P4516YVMnCGq3P1masEEHLsZkxhSewkCn4TIDCgGujuJcagjJAwRypIJYBHy8sBr1LRYAKTIhgUMXaRrKHj90hdFBr+vYRBSoWQS/1Iu5Tsj4KjcAoNftGhxiAl8FZx5ZNpb9KBVqS8JnhUpQBOX1XMEWl6Qzv1qFWgGWQyoIUmbEFKJCJ9StR1guImNm67mNgW2gAXGS4oUyoqJDgqMwZjyLwEFKN4zQqW3cyhs/twaer4QDq3Wv4XHfdendwfUrGJpT0Fae4hOJxEnFCppoUE2ZBqVuEy6bb+EQu9fftTntwTQVAqz3oNvt9aF25UIde3R20G8NO3YXe0O1d9ZtVgD7atNACPM/yOOsXMRmgYTzS69qvqcWakowCCNkUqdU+8imlyMAnlb24jRaLRVJMsqK3IgNoj0FIUwZN6Z6FxiQnjjObzaoTkValmjjREkA7taoVrZPLCRajTpiPG5gbt9kf3LgYS4M3HzCJ5CJGYU5zOeoD3GzM+qimBKdv6h61kflm5KI2o4aMY9IsmfsR0xq2CKOVB+DcoAg07HXMfckBPdn02ecIXDSpEppYIuFmY8VIF5YpNiV6mRdZpm2UTEfaMEFpWUUxuGBzb5vBUHDTsRhrq+o6xu/MJ5/VdPibtyoLTaJ4AmdjGHFxB5ZwTYxPqCupV/Vl7ARKykjfesnuvxUuDE5UNmKOodlzfq0eV+fOHceKynh/It4qnJP9LlOFcSp8CwQTNKM1DaOUPHSxlBkuCf0pn6oIzkEnisKPiweH2gk2EQ7KkDe0wSo1FBMusFIj6xI1EVbPiolbLQVF8WWAxbXDHH0a4aLFL0Or3uk3S+Rpne5zT/fy6wo3XaFpEDQ4gpPCSd80yoJGKs74giIXfpQGy2+Z6ZhP0iWZpfUIbQsDy8RzbaZ1zWKwy4hQ81vnEQ9eIoUfKYMXSsCaFx9WsisG+3xTD86h3iuJ8iN6voNElvXqfX2kEGNUSBKxt9cji3bwb7R5aWOvjAXkY5bs7C+KpX3FE0PrnVkJ3+GiMmVRinTfc3Wy9CoWGKnTVOjCxsJ5rXBx2S+UoaBSYXiMFbvxqOsL+6nXdEc996pBd8+o3e0P6t1Gs1A6hec0dyE92php9MOEtwn4TfUtCX2kuvKSxXPoDjud10pwdXq1EvPzOBp5MlgQeOFsa1bZ6eBc8xPthxizjvQzKs4Pdm7MW09qnd2ZljHYi1Gd6+AAKJbQJwT3wH/2LnM+fvPmrfPnZaefRaqsN9xBrXC6yZZ2GzI/hGLGFCkrT8KC8xrkM3GVdgh7UFx1h7mzQ1071GfEWc2yRQDllfvyVNqGu/+apqqlydlbo0301RM+cIfN8nocYlQTXE/D1R9N121/aI7qnU6hVN6m8PQ+GIrgP90I/68hTMXeMXz15K1xvtstYDWybfr9P/HRYV4=</source>
+  </file>
+  <file path="REST/Remote/Runtime/Runtime_Service.php" generated-path="REST.Remote.Runtime.Runtime_Service.html" hash="a761f252165295a5a22a1276f5e90178" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Abstract_Rest_Command">\jBpm4Php\Services\Abstract_Rest_Command</namespace-alias>
+    <class final="false" abstract="false" namespace="jBpm4Php\REST\Remote\Runtime" line="31" package="jBpm4Php\REST\Remote\Runtime">
+      <extends>\jBpm4Php\Services\Abstract_Rest_Command</extends>
+      <name>Runtime_Service</name>
+      <full_name>\jBpm4Php\REST\Remote\Runtime\Runtime_Service</full_name>
+      <docblock line="31">
+        <description>Runtime Process Calls</description>
+        <long-description></long-description>
+        <tag name="author" line="31" description="Fernando Libório"/>
+        <tag name="package" line="31" description="jBpm4Php\REST\Remote\Runtime"/>
+        <tag name="inherited_from" description="\jBpm4Php\Services\Abstract_Rest_Command" refers="\jBpm4Php\Services\Abstract_Rest_Command" link="/classes/jBpm4Php.Services.Abstract_Rest_Command.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Runtime" line="25" package="Default">
+        <name>$engine</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::engine</full_name>
+        <default></default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="41" package="jBpm4Php\REST\Remote\Runtime">
+        <name>start_process</name>
+        <full_name>\jBpm4Php\REST\Remote\Runtime\Runtime_Service::start_process()</full_name>
+        <docblock line="41">
+          <description>Starts a process and retrieves the list of variables associated with the process instance.</description>
+          <long-description></long-description>
+          <tag name="access" line="41" description="public"/>
+          <tag name="param" line="41" description="" type="string" variable="$process_def_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="41" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="41" description="JaxbProcessInstanceWithVariablesResponse" type="\jBpm4Php\REST\Remote\Runtime\A">
+            <type>\jBpm4Php\REST\Remote\Runtime\A</type>
+          </tag>
+          <tag name="link" line="41" description="JaxbProcessInstanceWithVariablesResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_def_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="60" package="jBpm4Php\REST\Remote\Runtime">
+        <name>get_process_instance</name>
+        <full_name>\jBpm4Php\REST\Remote\Runtime\Runtime_Service::get_process_instance()</full_name>
+        <docblock line="60">
+          <description>Does a (read only) retrieval of the process instance. This operation will fail (code 400) if the
+process instance has been completed.</description>
+          <long-description></long-description>
+          <tag name="access" line="60" description="public"/>
+          <tag name="param" line="60" description="" type="\jBpm4Php\REST\Remote\Runtime\long" variable="$process_id">
+            <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+          </tag>
+          <tag name="return" line="60" description="JaxbProcessInstanceWithVariablesResponse" type="\jBpm4Php\REST\Remote\Runtime\A">
+            <type>\jBpm4Php\REST\Remote\Runtime\A</type>
+          </tag>
+          <tag name="link" line="60" description="JaxbProcessInstanceWithVariablesResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="77" package="jBpm4Php\REST\Remote\Runtime">
+        <name>abort_process</name>
+        <full_name>\jBpm4Php\REST\Remote\Runtime\Runtime_Service::abort_process()</full_name>
+        <docblock line="77">
+          <description>Aborts the process instance</description>
+          <long-description></long-description>
+          <tag name="access" line="77" description="public"/>
+          <tag name="param" line="77" description="" type="\jBpm4Php\REST\Remote\Runtime\long" variable="$process_id">
+            <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+          </tag>
+          <tag name="return" line="77" description="a JaxbGenericResponse indicating whether or not the operation has succeeded" type="\jBpm4Php\REST\Remote\Runtime\Returns">
+            <type>\jBpm4Php\REST\Remote\Runtime\Returns</type>
+          </tag>
+          <tag name="link" line="77" description="JaxbProcessInstanceWithVariablesResponse JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="94" package="jBpm4Php\REST\Remote\Runtime">
+        <name>signal</name>
+        <full_name>\jBpm4Php\REST\Remote\Runtime\Runtime_Service::signal()</full_name>
+        <docblock line="94">
+          <description>Signals the process instance</description>
+          <long-description></long-description>
+          <tag name="param" line="94" description="" type="\jBpm4Php\REST\Remote\Runtime\long" variable="$process_id">
+            <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+          </tag>
+          <tag name="param" line="94" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="94" description="a JaxbGenericResponse indicating whether or not the operation has succeeded." type="\jBpm4Php\REST\Remote\Runtime\Returns">
+            <type>\jBpm4Php\REST\Remote\Runtime\Returns</type>
+          </tag>
+          <tag name="link" line="94" description="JaxbGenericResponse JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type>\jBpm4Php\REST\Remote\Runtime\long</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__construct()</full_name>
+        <docblock line="32">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="32" description="public"/>
+          <tag name="param" line="32" description="" type="\jBpm4Php\Services\Runtime_Engine" variable="$engine">
+            <type>\jBpm4Php\Services\Runtime_Engine</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$engine</name>
+          <default></default>
+          <type>\jBpm4Php\Services\Runtime_Engine</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="43" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__get()</full_name>
+        <docblock line="43">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="43" description="public"/>
+          <tag name="param" line="43" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="43" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Runtime" line="58" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::execute()</full_name>
+        <docblock line="58">
+          <description>Makes REST calls to the execution server. All calls are described on the documentation.</description>
+          <long-description></long-description>
+          <tag name="link" line="58" description="Documentation" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html"/>
+          <tag name="access" line="58" description="public"/>
+          <tag name="param" line="58" description="" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="58" description="" type="boolean" variable="$do_post">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="58" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="58" description="" type="string" variable="$xml_body">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="JSON response" type="\jBpm4Php\Services\A">
+            <type>\jBpm4Php\Services\A</type>
+          </tag>
+          <tag name="inherited_from" description="\jBpm4Php\Services\Rest_Command_Interface::execute()" refers="\jBpm4Php\Services\Rest_Command_Interface::execute()" link="/classes/jBpm4Php.Services.Rest_Command_Interface.html#method_execute"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$xml_body</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Runtime" line="93" package="Default">
+        <name>parse_query_map_parameters</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::parse_query_map_parameters()</full_name>
+        <docblock line="93">
+          <description>Convert map associative array into query map parameters.</description>
+          <long-description></long-description>
+          <tag name="access" line="93" description="private"/>
+          <tag name="param" line="93" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="93" description="map parameters" type="\jBpm4Php\Services\Query">
+            <type>\jBpm4Php\Services\Query</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$with_prefix</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+    </class>
+    <source>eJzdVuFu2zYQ/h0/xaFIATtwrKzt9qPtsrqZ3XrwEkO2FwQIYNDSyWJCkQJJOTGGPtUeYS+2IyU5meM2CbJgwwwkssi7j9/dfXf0+5/yNG8Ee3sN2IMjla80X6QWXh189z30UUsmYwVDPv/zD82Vs3F/k5QbSLhAoGfOtAWVwMXHPHszSvMOWTij+t3ZJBoRjErsFdP4FlaqgIhJ0BhzYzWfF5agLNBhgdKQqZgnK4dBa4WMUYNNESzqzLiT3Mun4ykM0Rja+4QSNRMwKuaCR0Q2QmkQGFFzKybFGOYezjn2HZVxRQX6ivCZ5Uq2ATnta1iiNvQOr+ujKsA2KO1Amsy6ADSo3Pm1iPUKBLM3rtsycBNoDFx63FTlFFRKcBTmFRcC5giFwaQQbedOxnA6mHw+mU6ge3wGp90w7B5Pzt6RsU0V7eISSyie5YITMsWkmbQrou4Qfu2FR5/JpftxMBxMzigA6A8mx73xGPonIXRh1A0ng6PpsBvCaBqOTsa9DsAYHS10APdnOfH1okzGaBkXpo79jEpsiKSIIWVLpFJHyJdEkUFEKntwGR0WE0oufNA3IgMYJCCVbYMhuu9Ta/O3QXB1ddVZyKKj9CIQJYAJDjtOtEGjIVmGJmcRrmHOw954ch5ipiyeh4W0PMN3jQYVAc7XNmPUS8Iy59051ZBFdhaisbMjlWUkWDKvuqfyh5FWZG3giAlh6pb5wAqqmb7bU+Uusbpki28T80FEghF0tTKrqAFeW5Sxga0MG783gD6epfvswdhSzxoqRV5RJSuqEAmUFGV8YahvfFcvmeZsLmiVzlURZ07AvhTOqvbn0lgmI+zUJ3xgkd/wHRitV2lWsAxcJ1BBdyvvWYzJjMewYeWkvILdjOU3O8Sx0JKE+wu7nld5HlRnnxKp32q2FH+unD7XroLLS3AyMaSTBdkW806ksiDWSglzMc9vf93n0uJC+8EQWJoYwQ+dV53r4JLjvvZFeTCDikDgn2U6IClk5KApE1SIWZWH5kZC2mXwP8LxdDhsef+ykju7hRa0bnLKo02aL16aQJeKCOirqw6VzQQVnFvzB71ol+nY2dm1NMH3D1EuuMT9Q4Jrb9+JMRdqlaG0jlBt83ee5WqLGgGqT1WmC6Mk2UQqxmaNe40RzcCmi6ANk3DaK6Nskbvz/NLY1OrPymkPmhpZDEqKVatWKs2KaorckWF5Q9F8LUtYTteE5hM0HRt4c3DQAl461wdtgtDcMjSRacKSTHKBJPyHydtPq3WObgv7/ybfBa7FO6vT1rwV+VNEW+MFL+Mn6/Z2NdZq9c/y/0P12u8Ox72vS7U7V26sblPkPyOc0D9cO7jy+QuTR2utcBnziGru7soU/W8ZunDojvSMbprB6doUxANjjP91gW0L5ZuiYy7Ld2fmo9S2RWSBx30eqT1OZW4qfl1kY76QTNyjsvv0dO8N+wxK6zyr1DYpPlZVxqf1tpyqi+lpoiph/yuq2rxrv/wFfleMng==</source>
+  </file>
+  <file path="REST/Remote/History/History_Service.php" generated-path="REST.Remote.History.History_Service.html" hash="04eded47877a69bb4e9cfc5e0e6a529b" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Abstract_Rest_Command">\jBpm4Php\Services\Abstract_Rest_Command</namespace-alias>
+    <class final="false" abstract="false" namespace="jBpm4Php\REST\Remote\History" line="25" package="Default">
+      <extends>\jBpm4Php\Services\Abstract_Rest_Command</extends>
+      <name>History_Service</name>
+      <full_name>\jBpm4Php\REST\Remote\History\History_Service</full_name>
+      <docblock line="25">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="25" description="Default"/>
+        <tag name="inherited_from" description="\jBpm4Php\Services\Abstract_Rest_Command" refers="\jBpm4Php\Services\Abstract_Rest_Command" link="/classes/jBpm4Php.Services.Abstract_Rest_Command.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\REST\Remote\History" line="25" package="Default">
+        <name>$engine</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::engine</full_name>
+        <default></default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="31" package="Default">
+        <name>clear</name>
+        <full_name>\jBpm4Php\REST\Remote\History\History_Service::clear()</full_name>
+        <docblock line="31">
+          <description>Cleans (deletes) all history logs.</description>
+          <long-description></long-description>
+          <tag name="access" line="31" description="public"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="44" package="Default">
+        <name>get_processes</name>
+        <full_name>\jBpm4Php\REST\Remote\History\History_Service::get_processes()</full_name>
+        <docblock line="44">
+          <description>Gets a list of ProcessInstanceLog instances.</description>
+          <long-description></long-description>
+          <tag name="access" line="44" description="public"/>
+          <tag name="return" line="44" description="JaxbHistoryLogList" type="\jBpm4Php\REST\Remote\History\A">
+            <type>\jBpm4Php\REST\Remote\History\A</type>
+          </tag>
+          <tag name="link" line="44" description="JaxbHistoryLogList" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="57" package="Default">
+        <name>get_process</name>
+        <full_name>\jBpm4Php\REST\Remote\History\History_Service::get_process()</full_name>
+        <docblock line="57">
+          <description>Gets the ProcessInstanceLog instance associated with the specified process instance.</description>
+          <long-description></long-description>
+          <tag name="access" line="57" description="public"/>
+          <tag name="return" line="57" description="JaxbHistoryLogList" type="\jBpm4Php\REST\Remote\History\A">
+            <type>\jBpm4Php\REST\Remote\History\A</type>
+          </tag>
+          <tag name="link" line="57" description="JaxbHistoryLogList" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="74" package="Default">
+        <name>get_childs</name>
+        <full_name>\jBpm4Php\REST\Remote\History\History_Service::get_childs()</full_name>
+        <docblock line="74">
+          <description>Gets a list of ProcessInstanceLog instances associated with any child/sub-processes associated with
+the specified process instance.</description>
+          <long-description></long-description>
+          <tag name="access" line="74" description="public"/>
+          <tag name="return" line="74" description="JaxbHistoryLogList" type="\jBpm4Php\REST\Remote\History\A">
+            <type>\jBpm4Php\REST\Remote\History\A</type>
+          </tag>
+          <tag name="link" line="74" description="JaxbHistoryLogList" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="90" package="Default">
+        <name>get_variables</name>
+        <full_name>\jBpm4Php\REST\Remote\History\History_Service::get_variables()</full_name>
+        <docblock line="90">
+          <description>Gets a list of VariableInstanceLog instances associated with the specified process instance.</description>
+          <long-description></long-description>
+          <tag name="access" line="90" description="public"/>
+          <tag name="return" line="90" description="JaxbHistoryLogList" type="\jBpm4Php\REST\Remote\History\A">
+            <type>\jBpm4Php\REST\Remote\History\A</type>
+          </tag>
+          <tag name="link" line="90" description="JaxbHistoryLogList" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$process_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__construct()</full_name>
+        <docblock line="32">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="32" description="public"/>
+          <tag name="param" line="32" description="" type="\jBpm4Php\Services\Runtime_Engine" variable="$engine">
+            <type>\jBpm4Php\Services\Runtime_Engine</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$engine</name>
+          <default></default>
+          <type>\jBpm4Php\Services\Runtime_Engine</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="43" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__get()</full_name>
+        <docblock line="43">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="43" description="public"/>
+          <tag name="param" line="43" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="43" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\History" line="58" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::execute()</full_name>
+        <docblock line="58">
+          <description>Makes REST calls to the execution server. All calls are described on the documentation.</description>
+          <long-description></long-description>
+          <tag name="link" line="58" description="Documentation" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html"/>
+          <tag name="access" line="58" description="public"/>
+          <tag name="param" line="58" description="" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="58" description="" type="boolean" variable="$do_post">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="58" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="58" description="" type="string" variable="$xml_body">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="JSON response" type="\jBpm4Php\Services\A">
+            <type>\jBpm4Php\Services\A</type>
+          </tag>
+          <tag name="inherited_from" description="\jBpm4Php\Services\Rest_Command_Interface::execute()" refers="\jBpm4Php\Services\Rest_Command_Interface::execute()" link="/classes/jBpm4Php.Services.Rest_Command_Interface.html#method_execute"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$xml_body</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="jBpm4Php\REST\Remote\History" line="93" package="Default">
+        <name>parse_query_map_parameters</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::parse_query_map_parameters()</full_name>
+        <docblock line="93">
+          <description>Convert map associative array into query map parameters.</description>
+          <long-description></long-description>
+          <tag name="access" line="93" description="private"/>
+          <tag name="param" line="93" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="93" description="map parameters" type="\jBpm4Php\Services\Query">
+            <type>\jBpm4Php\Services\Query</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$with_prefix</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="25" code="PPC:ERR-50005">No summary for class \jBpm4Php\REST\Remote\History\History_Service</error>
+      <error line="57" code="PPC:ERR-50015">Argument $process_id is missing from the Docblock of get_process</error>
+      <error line="74" code="PPC:ERR-50015">Argument $process_id is missing from the Docblock of get_childs</error>
+      <error line="90" code="PPC:ERR-50015">Argument $process_id is missing from the Docblock of get_variables</error>
+    </parse_markers>
+    <source>eJzlVeFu2zYQ/j09xaFIASewra1b+6PtsqqBnXhwE0OWVwQwYFDUSWJKkwJJ2TGGPlUfYS+2oyw7W5M1wZAB20rAEEV9990dv4/065+qsgrCo6MAjuBEVxsjitLBs2+/ew5DNIqpTMNYpL99MkJ7jP8lpbCQC4lAz4oZBzqHq7fV8odJWfUJ4UG7d4/JDSJYnbs1M/gSNroGzhQYzIR1RqS1IyoHlCzUBpY6E/nGc9BarTI04EoEh2ZpfSb/cno+gzFaS99OUaFhEiZ1KgWnYjkqi8CoNL9iS8wgbeh84NCXMm1LgaEmfuaEVl1AQd8NrNBYeofvd6lawi5o40k6zPkGDOjKxx1S1RuQzN2E3rUDN41mIFTDW+qKmiqJjtpcCykhRagt5rXs+nACw/tRcnYxSyA6v4T3URxH58nlKwK7UtNXXOGWSiwrKYiZejJMuQ2V7hneDeKTMwqJ3o7Go+SSGoDhKDkfTKcwvIghgkkUJ6OT2TiKYTKLJxfTQR9gir4s9AT373Le6EU7maFjQtpd75cksaUiZQYlWyFJzVGsqEQGnFz2YBk9F5NaFU3TNyYDGOWgtOuCpXJfl85VL8NwvV73C1X3tSlCuSWw4XHfmzYMAsWWaCvGcU8zjwfTZB7jUjucn5FE2mxeBQGJAPM9ZopmRVx2HqWkIeNuEaN1ixO9XJJhCc4lsxba8EULB7x2qDILd0YFvwZAozl3ftDZk8iUhU6GEh1ashUZotxygtSF39kt8g3jVE3rbt6uhs1zuwR5rbj3JnAiNZ3D5ts24zcHtZHwI9jKCOXyzpOnNmyzhA36SRcOHK30jlEVQmHvmAIOqUtoh0FXGwVXVqtFhlxn2NkFXCMng3d8ii4k8WxwSIE+5mPwebun6Cx5gY5nc3lMjPY9jZR1THEc64JOyXZ+T+Pwpi0ogp/ZddqqQARjmu0xUqgP4E1iySUFOalO+1wvw8xoLe1VWv1x2qOdwcI010Lo6L4IX/Sf9a/DDwJ7pvHKX6e6W4cC3aLatoj2T3r48QVJ9pvwaLIMo/H0Pl38yfyCInS1Ws0F83dZcyo93lbIRe4vobbRPfz/pV/noJ0sRPY3hAyfein3EU3ULV0/B9xk3K//U9I/7EjecoD/D+SlkFlo67S3t/ot3C7XV+GYZkMewTBhQ/Qfsc0vzAiWSnyYb74KH6zaLXkMK+y4/i1u+Pg7RWXg0g==</source>
+  </file>
+  <file path="Services/Rest_Command_Interface.php" generated-path="Services.Rest_Command_Interface.html" hash="a69c5d1cf76baca58d5d97e2d3f3bd15" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <interface namespace="jBpm4Php\Services" line="23" package="Default">
+      <name>Rest_Command_Interface</name>
+      <full_name>\jBpm4Php\Services\Rest_Command_Interface</full_name>
+      <docblock line="23">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="23" description="Default"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="25" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Rest_Command_Interface::execute()</full_name>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+    <parse_markers>
+      <error line="23" code="PPC:ERR-50009">No summary for interface ""</error>
+      <error line="25" code="PPC:ERR-50015">Argument $url is missing from the Docblock of execute</error>
+      <error line="25" code="PPC:ERR-50015">Argument $do_post is missing from the Docblock of execute</error>
+      <error line="25" code="PPC:ERR-50015">Argument $map is missing from the Docblock of execute</error>
+      <error line="25" code="PPC:ERR-50008">No summary for method execute()</error>
+    </parse_markers>
+    <source>eJyNkl1r2zAUhu/9K96LXrQlxPu8absNNyStIUuC41ACg6LYx7GGLAlJThrGftV+wv7YjtKvm8EWMOF8PXpfHV19sa1N0vPzBOcYGXtwctsGvHvz9iMm5LTQtcFUbn7/ctLEnviVrfRopCLwvxUuwDT4fm27D4vWDrkjNj3HsadxRPCmCXvh6AIH06MSGo5q6YOTmz4wKoAPS41DZ2rZHCKDc72uySG0hECu8/GkGNzMVpiS91y7IU1OKCz6jZIVi61Ie4JgaTHjW6qxOeLi4CRKWT5JwcQwXwRp9AAkue6wI+c5xvvno56AAxgXIaciRAMOxsa5M1Z9gBLhdfRvN/BqtIbUR25rLJtqGcc291IpbAi9p6ZXgzjOzbjLy9v5qkQ2W+MuK4psVq4vuTm0hqu0o0eU7KySTGZPTuhwYOmR8HVcjG55JLvOp3m5ZgOY5OVsvFxiMi+QYZEVZT5aTbMCi1WxmC/HQ2BJURZFwL9vuTnui2+ypiCk8s/e17xizyJVjVbsiFddkdyxRIGKX9l/rzGyhDJ6ezT9+siAvIE2YQDPcq/aEOxFmu73++FW90Pjtql6BPj08zA+2jRJtOjIW1HRC+bbktyO+/xlkuSaV9jEakE+3I9M1/F7vH9JJz8S8M8+ymt6XcX1gx6o4q2envRODXBSm3trfMAnlMVqzIlOWA5mq+n07DL5+QdVGSCF</source>
+  </file>
+  <file path="Services/Abstract_Rest_Command.php" generated-path="Services.Abstract_Rest_Command.html" hash="8b59c55da267d3ef4b7462a9fd2a1082" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="jBpm4Php\Services" line="23" package="Default">
+      <extends/>
+      <implements>\jBpm4Php\Services\Rest_Command_Interface</implements>
+      <name>Abstract_Rest_Command</name>
+      <full_name>\jBpm4Php\Services\Abstract_Rest_Command</full_name>
+      <docblock line="23">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="23" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="25" package="Default">
+        <name>$engine</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::engine</full_name>
+        <default></default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__construct()</full_name>
+        <docblock line="32">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="32" description="public"/>
+          <tag name="param" line="32" description="" type="\jBpm4Php\Services\Runtime_Engine" variable="$engine">
+            <type>\jBpm4Php\Services\Runtime_Engine</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$engine</name>
+          <default></default>
+          <type>\jBpm4Php\Services\Runtime_Engine</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="43" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__get()</full_name>
+        <docblock line="43">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="43" description="public"/>
+          <tag name="param" line="43" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="43" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="58" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::execute()</full_name>
+        <docblock line="58">
+          <description>Makes REST calls to the execution server. All calls are described on the documentation.</description>
+          <long-description></long-description>
+          <tag name="link" line="58" description="Documentation" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html"/>
+          <tag name="access" line="58" description="public"/>
+          <tag name="param" line="58" description="" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="58" description="" type="boolean" variable="$do_post">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="58" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="58" description="" type="string" variable="$xml_body">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="JSON response" type="\jBpm4Php\Services\A">
+            <type>\jBpm4Php\Services\A</type>
+          </tag>
+          <tag name="inherited_from" description="\jBpm4Php\Services\Rest_Command_Interface::execute()" refers="\jBpm4Php\Services\Rest_Command_Interface::execute()" link="/classes/jBpm4Php.Services.Rest_Command_Interface.html#method_execute"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$xml_body</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="jBpm4Php\Services" line="93" package="Default">
+        <name>parse_query_map_parameters</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::parse_query_map_parameters()</full_name>
+        <docblock line="93">
+          <description>Convert map associative array into query map parameters.</description>
+          <long-description></long-description>
+          <tag name="access" line="93" description="private"/>
+          <tag name="param" line="93" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="93" description="map parameters" type="\jBpm4Php\Services\Query">
+            <type>\jBpm4Php\Services\Query</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$with_prefix</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="23" code="PPC:ERR-50005">No summary for class \jBpm4Php\Services\Abstract_Rest_Command</error>
+      <error line="93" code="PPC:ERR-50015">Argument $with_prefix is missing from the Docblock of parse_query_map_parameters</error>
+      <error line="25" code="PPC:ERR-50007">No summary for property $engine</error>
+    </parse_markers>
+    <source>eJyVVutu4kYU/s9TnEbshqy8eLu9SJtssvUSs6EiQI1RFKmSZewDTNaecWfGJKjKU/UR+mI9M2BuSZoEKQF7zvnOZb7zzXz+UsyKmvvuXQ3eQUsUC8mmMw0fP/z4C7RR8pinArps/O8/kgljY/7CGVMwYRkCfRex1CAmcPO1yH8ezIomWRij6tnYTCQiKDHRt7HEY1iIEpKYg8SUKS3ZuNQEpYGCuUJCLlI2WRgMelfyFCXoGYJGmSsTyTx8642gi0rR2jfkKOMMBuU4YwklmyBXCDGlZt6oGaYwtnDGsW1SGa5SgbYg/FgzwR1ARusS5igVPcNPVagVoANCGpBGrE0BEkRh/I4o6wVksd64PtaBTaEpMG5xZ6KgomYER2XesiyDMUKpcFJmjnEnY7jqhBf9UQhe7xquvCDweuH1CRnrmaBVnOMSiuVFxgiZapIx1wtK3SBc+kHrgly8r51uJ7ymAqDdCXv+cAjtfgAeDLwg7LRGXS+AwSgY9Id+E2CIJi00AM93eWL3izqZoo5Zpqrar2mLFSWZpTCL50hbnSCbU4oxJMSyF2+jwYozwae26A3JADoT4EI7oCjdzzOti2PXvb29bU552RRy6mZLAOWeNQ1p3VqNxzmqIk5wDfPnEOWc7NRJrRaPaYfiREOSxUqBt3qMAlQ6aok8J3baRmOOXCvYfh91OO3/hKBrf9eAPoVkc6IE1JFPGccT+9L+s6NmPmbcOMUoE009rN79FieUzoq6yfotDVmcQ1ByzXKMfAtaga+M3GXgZfcmJU8MOyGKkipK43H3I+u3TNt86pqm+/3ZchFOd0u4r+0X8Q01lf6i9M0E0EbWzT5sCpaoS8khZ3eYPlPKFHXDeu/nvMJYpW5Nnsr3Mv6OtHn+MCQJyjIFWlgm4h0mpY1DZKRBboJHE7k0iS2/VUIDTAwWy5lLRVIaJlj1aK7LyRj/Dis6kolq3oyFUs1E5O7NuMjd+a/Njy5NuZyWLEX35uvgMsBcaPQGneZM5xmcbwO/qrGlzGBvaSxEhiS19VREhVB6f90IxgLqeVw8gXmXZ9FYpIv9/fLg92G/R51XhbBz+j87t+wtNkyCziaVUwiDke/Y6PTQG3W7zibg6s0DehKfNd4Z74TgIsaZbhyd1DYG1NyokDhhd2TToDoo2Cr04V8lysXh0RF8gbbXHfpwbHPYcZdZ87SiEvWC0KxXRFlGtjdIhCdEena2ox2drEHWP2yKCjWdFY0qcwdao6DbH4QRfTk24JbrMx5DPxhcnZPqkcJwPWkcvFHHb9SBszu2788Mw8wYPFgoSNxuhUyPXhyz7XW6/Z4fBP3Asd16uWe/2+1fdfstL+z0e690DvxwFPRCOvKGbf+1kekoCzdMe7Fb2Ln06bh14NOnT9ucYhNo/EDHeMTLLGusKUo82hDzZUm1O373fLhF863cnke4CMPBhe+dm37YyW0ctowN1+/1oqCblTF3Cfpwe3vvATM6ql+T6iOBvFbLH4THEBd010isOLk3SvDdUFuDVElDNalGBdah9rckyYTC7dUH2l7BPSXs1AiSbQ1GTIjjImGUI908lgpHwyLAzrE12Mxx84HCLo/uJ3Xywcn1xyOou3K4ugys9fB5VTGXnY2IWerv6+DanQwODvbISlRdbpvBszTd2Xy6tWGczMAum5ty/TuS4J5BfR5nJe7TejceqeOW+py+UW+N/BCAU7nvUvp+N/ZO4lTiNJJYZHR1ahy4b+suYR0YvLXVHtqOe2O3UaerVpG6rzP8Yhq8VMgNJMn+xmB/8VE2Vyxcm1U0vP8PjmIBYQ==</source>
+  </file>
+  <file path="REST/Remote/Task/Task_Service.php" generated-path="REST.Remote.Task.Task_Service.html" hash="0eaa347b7007da44277b95c823816943" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Abstract_Rest_Command">\jBpm4Php\Services\Abstract_Rest_Command</namespace-alias>
+    <class final="false" abstract="false" namespace="jBpm4Php\REST\Remote\Task" line="25" package="Default">
+      <extends>\jBpm4Php\Services\Abstract_Rest_Command</extends>
+      <name>Task_Service</name>
+      <full_name>\jBpm4Php\REST\Remote\Task\Task_Service</full_name>
+      <docblock line="25">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="25" description="Default"/>
+        <tag name="inherited_from" description="\jBpm4Php\Services\Abstract_Rest_Command" refers="\jBpm4Php\Services\Abstract_Rest_Command" link="/classes/jBpm4Php.Services.Abstract_Rest_Command.html"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Task" line="25" package="Default">
+        <name>$engine</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::engine</full_name>
+        <default></default>
+        <docblock line="25">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="34" package="Default">
+        <name>activate</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::activate()</full_name>
+        <docblock line="34">
+          <description>Activates a task</description>
+          <long-description></long-description>
+          <tag name="access" line="34" description="public"/>
+          <tag name="param" line="34" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="34" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="34" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="51" package="Default">
+        <name>claim</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::claim()</full_name>
+        <docblock line="51">
+          <description>Claims a task</description>
+          <long-description></long-description>
+          <tag name="access" line="51" description="public"/>
+          <tag name="param" line="51" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="51" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="51" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="69" package="Default">
+        <name>claim_next_available</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::claim_next_available()</full_name>
+        <docblock line="69">
+          <description>Claims the next available task</description>
+          <long-description></long-description>
+          <tag name="access" line="69" description="public"/>
+          <tag name="param" line="69" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="69" description="" type="string" variable="$lang">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="69" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="69" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$lang</name>
+          <default>'en-UK'</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="89" package="Default">
+        <name>complete</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::complete()</full_name>
+        <docblock line="89">
+          <description>Completes a task</description>
+          <long-description></long-description>
+          <tag name="access" line="89" description="public"/>
+          <tag name="param" line="89" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="89" description="&lt;p&gt;You can only pass basic types (as map query parameters)&lt;/p&gt;" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="89" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="89" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="107" package="Default">
+        <name>delegate</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::delegate()</full_name>
+        <docblock line="107">
+          <description>Delegates a task</description>
+          <long-description></long-description>
+          <tag name="access" line="107" description="public"/>
+          <tag name="param" line="107" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="107" description="&lt;p&gt;Identifies the user or group to which the task is delegated&lt;/p&gt;" type="string" variable="$target_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="107" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="107" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$target_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="124" package="Default">
+        <name>exit_task</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::exit_task()</full_name>
+        <docblock line="124">
+          <description>Exits a task</description>
+          <long-description></long-description>
+          <tag name="access" line="124" description="public"/>
+          <tag name="param" line="124" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="124" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="124" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="141" package="Default">
+        <name>fail</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::fail()</full_name>
+        <docblock line="141">
+          <description>Fails a task</description>
+          <long-description></long-description>
+          <tag name="access" line="141" description="public"/>
+          <tag name="param" line="141" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="141" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="141" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="159" package="Default">
+        <name>forward</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::forward()</full_name>
+        <docblock line="159">
+          <description>Delegates a task</description>
+          <long-description></long-description>
+          <tag name="access" line="159" description="public"/>
+          <tag name="param" line="159" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="159" description="&lt;p&gt;Identifies the user or group to which the task is forwarded&lt;/p&gt;" type="string" variable="$target_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="159" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="159" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$target_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="177" package="Default">
+        <name>nominate</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::nominate()</full_name>
+        <docblock line="177">
+          <description>Nominates a task</description>
+          <long-description></long-description>
+          <tag name="access" line="177" description="public"/>
+          <tag name="param" line="177" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="177" description="&lt;p&gt;Identifies the user(s) or group(s) that are nominated for the task&lt;/p&gt;" type="string" variable="$target_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="177" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="177" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$target_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="194" package="Default">
+        <name>release</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::release()</full_name>
+        <docblock line="194">
+          <description>Releases a task</description>
+          <long-description></long-description>
+          <tag name="access" line="194" description="public"/>
+          <tag name="param" line="194" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="194" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="194" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="211" package="Default">
+        <name>resume</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::resume()</full_name>
+        <docblock line="211">
+          <description>Resumes a task</description>
+          <long-description></long-description>
+          <tag name="access" line="211" description="public"/>
+          <tag name="param" line="211" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="211" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="211" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="228" package="Default">
+        <name>skip</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::skip()</full_name>
+        <docblock line="228">
+          <description>Skips a task</description>
+          <long-description></long-description>
+          <tag name="access" line="228" description="public"/>
+          <tag name="param" line="228" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="228" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="228" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="245" package="Default">
+        <name>start</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::start()</full_name>
+        <docblock line="245">
+          <description>Starts a task</description>
+          <long-description></long-description>
+          <tag name="access" line="245" description="public"/>
+          <tag name="param" line="245" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="245" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="245" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="262" package="Default">
+        <name>stop</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::stop()</full_name>
+        <docblock line="262">
+          <description>Stops a task</description>
+          <long-description></long-description>
+          <tag name="access" line="262" description="public"/>
+          <tag name="param" line="262" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="262" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="262" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="279" package="Default">
+        <name>suspend</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::suspend()</full_name>
+        <docblock line="279">
+          <description>Suspends a task</description>
+          <long-description></long-description>
+          <tag name="access" line="279" description="public"/>
+          <tag name="param" line="279" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="279" description="JaxbGenericResponse" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="279" description="JaxbGenericResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="297" package="Default">
+        <name>show_task_form</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::show_task_form()</full_name>
+        <docblock line="297">
+          <description>Checks that the task idetified by taskId exists and generates an URL to show the task form on a remote
+application</description>
+          <long-description></long-description>
+          <tag name="access" line="297" description="public"/>
+          <tag name="param" line="297" description="" type="string" variable="$task_id">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="297" description="JaxbTaskFormResponse instance, that contains the URL to the task form" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="297" description="JaxbTaskFormResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$task_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="315" package="Default">
+        <name>get_tasks</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::get_tasks()</full_name>
+        <docblock line="315">
+          <description>The returned tasks should have the potential owner identified by the parameter given.</description>
+          <long-description></long-description>
+          <tag name="access" line="315" description="public"/>
+          <tag name="param" line="315" description="" type="string" variable="$owner">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="315" description="" type="string" variable="$lang">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="315" description="list of TaskSummaryImpl instances" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+          <tag name="link" line="315" description="TaskSummaryImpl" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$owner</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$lang</name>
+          <default>'en-UK'</default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="335" package="Default">
+        <name>query</name>
+        <full_name>\jBpm4Php\REST\Remote\Task\Task_Service::query()</full_name>
+        <docblock line="335">
+          <description>Queries the available non-archived tasks.</description>
+          <long-description></long-description>
+          <tag name="link" line="335" description="Parameters" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html#remote.rest.task"/>
+          <tag name="link" line="335" description="JaxbTaskSummaryListResponse" link="https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote"/>
+          <tag name="access" line="335" description="public"/>
+          <tag name="param" line="335" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="335" description="JaxbTaskSummaryListResponse with a list of TaskSummaryImpl instances" type="\jBpm4Php\REST\Remote\Task\A">
+            <type>\jBpm4Php\REST\Remote\Task\A</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="32" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__construct()</full_name>
+        <docblock line="32">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="32" description="public"/>
+          <tag name="param" line="32" description="" type="\jBpm4Php\Services\Runtime_Engine" variable="$engine">
+            <type>\jBpm4Php\Services\Runtime_Engine</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$engine</name>
+          <default></default>
+          <type>\jBpm4Php\Services\Runtime_Engine</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="43" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::__get()</full_name>
+        <docblock line="43">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="43" description="public"/>
+          <tag name="param" line="43" description="" type="string" variable="$name">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="43" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\REST\Remote\Task" line="58" package="Default">
+        <name>execute</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::execute()</full_name>
+        <docblock line="58">
+          <description>Makes REST calls to the execution server. All calls are described on the documentation.</description>
+          <long-description></long-description>
+          <tag name="link" line="58" description="Documentation" link="http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html"/>
+          <tag name="access" line="58" description="public"/>
+          <tag name="param" line="58" description="" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="58" description="" type="boolean" variable="$do_post">
+            <type>boolean</type>
+          </tag>
+          <tag name="param" line="58" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="58" description="" type="string" variable="$xml_body">
+            <type>string</type>
+          </tag>
+          <tag name="return" line="58" description="JSON response" type="\jBpm4Php\Services\A">
+            <type>\jBpm4Php\Services\A</type>
+          </tag>
+          <tag name="inherited_from" description="\jBpm4Php\Services\Rest_Command_Interface::execute()" refers="\jBpm4Php\Services\Rest_Command_Interface::execute()" link="/classes/jBpm4Php.Services.Rest_Command_Interface.html#method_execute"/>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$do_post</name>
+          <default>TRUE</default>
+          <type>boolean</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default>NULL</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$xml_body</name>
+          <default>NULL</default>
+          <type>string</type>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="jBpm4Php\REST\Remote\Task" line="93" package="Default">
+        <name>parse_query_map_parameters</name>
+        <full_name>\jBpm4Php\Services\Abstract_Rest_Command::parse_query_map_parameters()</full_name>
+        <docblock line="93">
+          <description>Convert map associative array into query map parameters.</description>
+          <long-description></long-description>
+          <tag name="access" line="93" description="private"/>
+          <tag name="param" line="93" description="" type="array" variable="$map">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="93" description="map parameters" type="\jBpm4Php\Services\Query">
+            <type>\jBpm4Php\Services\Query</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$map</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$with_prefix</name>
+          <default>TRUE</default>
+          <type/>
+        </argument>
+        <inherited_from>\jBpm4Php\Services\Abstract_Rest_Command</inherited_from>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="25" code="PPC:ERR-50005">No summary for class \jBpm4Php\REST\Remote\Task\Task_Service</error>
+    </parse_markers>
+    <source>eJzlWm1zGjcQ/mx+xTZ1x+DB0KYvH5LYLXFNQktsystkPOMZRtwJTvaddJV0YCaTX9Wf0D/WXd0LJNiusfOCx8wYfKfd1e4+j1bS6V78Ggdxqb67W4JdOFTxXItJYOHp9z/8DE2uJZO+grYY/fuPFopk6K8fCANjEXLA35hpC2oM5y/j6KdOENdQgoTya5IZa87BqLGdMc2fwVwl4DEJmvvCWC1GiUVTFrCzutIQKV+M52QD7yXS5xpswMFyHRnqiS5eHQ+gzY3Btldccs1C6CSjUHjorMel4cDQNbpjAu7DyJkjxSa50stcgaZC+8wKJavABbZrmHJt8Bp+zLvKDFZBaTJSZpYC0KBi0qug13MImV2oXpWBRaA+COnsBirGoAI0h2HORBjCiENi+DgJq6SOwvC21X99MuhD4/gU3ja63cZx//Q5CttAYSuf8tSUiOJQoGWMSTNp5+g6WXhz1D18jSqNl612q3+KAUCz1T8+6vWgedKFBnQa3X7rcNBudKEz6HZOekc1gB4ntzgZ+P8sjx1emEmfWyZCk8d+ihAbdDL0IWBTjlB7XEzRRQYesuzWMJItFio5cUEvSAbQGoNUtgoG3X0RWBs/q9dns1ltIpOa0pN6mBow9YMakbZeKkkWcRMzjxdmzrpHvf5Zl0fK8rM+MxfPSyVEAM4KgR7XUzRkzhojBJB5dtjlxg4PVRQhW1HcC5kxQLrDTBb4peXSN3ClSuldacsNN/rsQsOzYorkMZgYi0by+78xD3vNKOwVd3GwsQiISpiRbVIYCh+KZs1toiUC+we7HLmECg87jxVBVUiFQl4AZcxgyiaY1mRU81RU97VSoTkfxcv/7glp+US7MVK3OHjqv9Se1i7rF4LvaZe4qzrL+qq73zQGGCfSIyvAspjLeQAVJ/bOfW9tJzqEfTAxxmjH5SffmTqJ1fE3V3xSTYPZ2tq2WIr2DricCMn3DlC1WrSkttPLCiIF2SdL0rlRcuhzT/nkSGrmknsJ+UV2oN8dHFVQkXTep+pLwB2GTESPCTWPAl4bMqe1QXhR0ZE4QIFNsVyxEc5hdwXwmtaQ4fdDxHZIeRkWeSmgrmYx7cMOl3uDP3fWwp6MFjbvToSt7YjF2E9ZmKFMwrDsfKpU4Fc4HrTb8Axo6puXd+h2wiZ8Z/8gFbkjkzBq7PEGPimcc/n9CvdHrS4C162bPmmFpGQ4xxUW2hsxg4jZeYw9lnFtQ1J/J1xTMyqjJ9pUHhzvsiQucy3FmUC9Nc8yK1+uzKyQY3lK/52HfHLPKf3aVj3hliaPls+lFWPB05KW0AoKl2ITrZIYrIJZILwgXTajRbcCzdx6cBNP7vgySYpE3JYjuZEvyZGsIqW+tnyqSAu/C/LQ10p1OboU9pPw52FAzDHcIbm+9vqCNDdhedGkzc/jAWyM4a6NFSltAlYbWqBxK437d//hFejM8XvV58zG5pXnFfYcq0jIr8CeMi7vcgLR/+7JET3DkplDvnsYkzPqgXEoD+JeJMqNPAAWdbEGMfNpSPQwENZpxGvPGpneJkwcGGcSPS7MKOA7QEZqm4BY70LEjwgvg+GujRYpbQRWWDcf06bHULzro0VamwGXelRDC8O9A1hqM4ZWYmJ3JPV44EojXh+xVG8TQDsMuHdh0nX+Yp/oc7cvoCNtd6fl09MTQ4VT+jBxh6hucyJh0G3TTtMEarYwgHuECOgQDrLM5t2xOMYMOgw+HT/oXLSJPRYEERILmPR4NY3LU9IyvOf8y/z9wNXPSqiPvbuZUZhG94xqSH6tTyxUz/vbBHb1A55ZQi5RX+aD83oCIcY84S6UhaBmSCvinlwiH0nkRw8wEVNOLz6sQRxn9Jo2OrlZZVSIPKc3ByiPvSSKmJ63ojgsSGU+G1s+6jEnCsCVVKHdn0tpOQ3yxhM0+mSHHtlessj7CSnTjjKzsjjcyixm6DoTOh9i+5DRwR0Pld1JxRJ9xBjK34AwQzU65x4uQHLFClSWXFpiWiGxd2AXeWgjGM+hkH+/QtA0mmsJ+Bd6lz/fWBzGSiX3mPYC966Iy2FtFVTE1FeeqZ2PlDEOV4foFGGr06OSSYJUrZ+/7LxJX+1odFq1wEbhtymaNYzH1lyJ6RRnZ7ei7uKE7vpyt5Seouq5d1fYV+TvDc7dWPSWKHSbOufEn1RhtazdpYA1G+3eylHb+/8AoF3srQ==</source>
+  </file>
+  <file path="Services/Runtime_Engine.php" generated-path="Services.Runtime_Engine.html" hash="385f71f3a1a90cba093b546f9a8f58e1" package="Default">
+    <docblock line="0">
+      <description>Copyright 2015 Fernando Libório</description>
+      <long-description>This file is part of jBpm4Php.
+
+jBpm4Php is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+jBpm4Php is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</long-description>
+      <tag name="package" line="0" description="Default"/>
+    </docblock>
+    <namespace-alias name="Task_Service">\jBpm4Php\REST\Remote\Task\Task_Service</namespace-alias>
+    <namespace-alias name="Runtime_Service">\jBpm4Php\REST\Remote\Runtime\Runtime_Service</namespace-alias>
+    <namespace-alias name="History_Service">\jBpm4Php\REST\Remote\History\History_Service</namespace-alias>
+    <namespace-alias name="Deployment_Service">\jBpm4Php\REST\Remote\Deployment\Deployment_Service</namespace-alias>
+    <class final="false" abstract="false" namespace="jBpm4Php\Services" line="28" package="Default">
+      <extends/>
+      <name>Runtime_Engine</name>
+      <full_name>\jBpm4Php\Services\Runtime_Engine</full_name>
+      <docblock line="28">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="28" description="Default"/>
+      </docblock>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="30" package="Default">
+        <name>$url</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::url</full_name>
+        <default></default>
+        <docblock line="30">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="31" package="Default">
+        <name>$deployment_id</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::deployment_id</full_name>
+        <default></default>
+        <docblock line="31">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="32" package="Default">
+        <name>$authentication_type</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::authentication_type</full_name>
+        <default></default>
+        <docblock line="32">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="33" package="Default">
+        <name>$username</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::username</full_name>
+        <default></default>
+        <docblock line="33">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <property static="false" visibility="private" namespace="jBpm4Php\Services" line="34" package="Default">
+        <name>$password</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::password</full_name>
+        <default></default>
+        <docblock line="34">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="45" package="Default">
+        <name>__construct</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::__construct()</full_name>
+        <docblock line="45">
+          <description>Constructor</description>
+          <long-description></long-description>
+          <tag name="access" line="45" description="public"/>
+          <tag name="param" line="45" description="&lt;p&gt;This is the URL of the deployed jbpm-console, kie-wb or BPMS instance. For example: &lt;a href=&quot;http://localhost:8080/jbpm-console/&quot;&gt;http://localhost:8080/jbpm-console/&lt;/a&gt;&lt;/p&gt;" type="string" variable="$url">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="&lt;p&gt;This is the name (id) of the deployment the RuntimeEngine should interact with.&lt;/p&gt;" type="string" variable="$deployment_id">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="&lt;p&gt;Basic or Form Based&lt;/p&gt;" type="string" variable="$authentication_type">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="&lt;p&gt;This is the user name needed to access the REST API.&lt;/p&gt;" type="string" variable="$username">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="45" description="&lt;p&gt;This is the password needed to access the REST API.&lt;/p&gt;" type="string" variable="$password">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$url</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$deployment_id</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$authentication_type</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$username</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$password</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="64" package="Default">
+        <name>__get</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::__get()</full_name>
+        <docblock line="64">
+          <description>Getter</description>
+          <long-description></long-description>
+          <tag name="access" line="64" description="public"/>
+          <tag name="param" line="64" description="" type="mixed" variable="$name">
+            <type>mixed</type>
+          </tag>
+          <tag name="return" line="64" description="" type="mixed">
+            <type>mixed</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$name</name>
+          <default></default>
+          <type>mixed</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="74" package="Default">
+        <name>get_runtime_service</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::get_runtime_service()</full_name>
+        <docblock line="74">
+          <description>Returns a new instance of Runtime_Service class.</description>
+          <long-description></long-description>
+          <tag name="access" line="74" description="public"/>
+          <tag name="return" line="74" description="" type="\jBpm4Php\REST\Remote\Runtime\Runtime_Service">
+            <type>\jBpm4Php\REST\Remote\Runtime\Runtime_Service</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="84" package="Default">
+        <name>get_history_service</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::get_history_service()</full_name>
+        <docblock line="84">
+          <description>Returns a new instance of History_Service class.</description>
+          <long-description></long-description>
+          <tag name="access" line="84" description="public"/>
+          <tag name="return" line="84" description="" type="\jBpm4Php\REST\Remote\History\History_Service">
+            <type>\jBpm4Php\REST\Remote\History\History_Service</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="94" package="Default">
+        <name>get_task_service</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::get_task_service()</full_name>
+        <docblock line="94">
+          <description>Returns a new instance of Task_Service class.</description>
+          <long-description></long-description>
+          <tag name="access" line="94" description="public"/>
+          <tag name="return" line="94" description="" type="\jBpm4Php\REST\Remote\Task\Task_Service">
+            <type>\jBpm4Php\REST\Remote\Task\Task_Service</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="jBpm4Php\Services" line="104" package="Default">
+        <name>get_deployment_service</name>
+        <full_name>\jBpm4Php\Services\Runtime_Engine::get_deployment_service()</full_name>
+        <docblock line="104">
+          <description>Returns a new instance of Deployment_Service class.</description>
+          <long-description></long-description>
+          <tag name="access" line="104" description="public"/>
+          <tag name="return" line="104" description="" type="\jBpm4Php\REST\Remote\Deployment\Deployment_Service">
+            <type>\jBpm4Php\REST\Remote\Deployment\Deployment_Service</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="true" namespace="jBpm4Php\Services" line="110" package="Default">
+      <extends/>
+      <name>Authentication_Type</name>
+      <full_name>\jBpm4Php\Services\Authentication_Type</full_name>
+      <docblock line="110">
+        <description></description>
+        <long-description></long-description>
+        <tag name="package" line="110" description="Default"/>
+      </docblock>
+      <constant namespace="jBpm4Php\Services" line="112" package="Default">
+        <name>BASIC</name>
+        <full_name>\jBpm4Php\Services\Authentication_Type::BASIC</full_name>
+        <value>'BASIC'</value>
+        <docblock line="112">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="jBpm4Php\Services" line="113" package="Default">
+        <name>FORM_BASED</name>
+        <full_name>\jBpm4Php\Services\Authentication_Type::FORM_BASED</full_name>
+        <value>'FORM_BASED'</value>
+        <docblock line="113">
+          <description></description>
+          <long-description></long-description>
+        </docblock>
+      </constant>
+    </class>
+    <parse_markers>
+      <error line="28" code="PPC:ERR-50005">No summary for class \jBpm4Php\Services\Runtime_Engine</error>
+      <error line="110" code="PPC:ERR-50005">No summary for class \jBpm4Php\Services\Authentication_Type</error>
+      <error line="30" code="PPC:ERR-50007">No summary for property $url</error>
+      <error line="31" code="PPC:ERR-50007">No summary for property $deployment_id</error>
+      <error line="32" code="PPC:ERR-50007">No summary for property $authentication_type</error>
+      <error line="33" code="PPC:ERR-50007">No summary for property $username</error>
+      <error line="34" code="PPC:ERR-50007">No summary for property $password</error>
+    </parse_markers>
+    <source>eJydVm1vGjkQ/hx+xVyUUyFH2DR3J1Wh6ZWkJEHKCwKiKjpOyOwOrNtde2V7ISjKr7qfcH/sxvsCy0sDKUpYbM+Mn2fmGXs//hX5Uck5PCzBIVzIaKb42Ddwcvz+T7hEJZjwJNzw4X//Ki6tjf3v+VzDiAcI9IyYMiBH8O08Cv9o+1GNLKxRPrY2I4UIWo7MlCk8hZmMwWUCFHpcG8WHsaFQBmgzRyoIpcdHMxuD5mLhoQLjIxhUobY72cHV3QPcoNa0doUCFQugHQ8D7hJYF4VGYATNzmgfPRgm4azjpYXSzaDApaT4zHApqoCc1hVMUGkaw+/5VlnAKkhlg5SZsQQUyMj6VQj1DAJmFq6bMrAg6gEXSVxfRkTKp3BEc8qDAIYIscZRHFStOxnD11bv+v6hB427R/ja6HQad73HOhkbX9IqTjANxcMo4BSZOCkmzIyg2wi3zc7FNbk0zls3rd4jEYDLVu+u2e3C5X0HGtBudHqti4ebRgfaD532fbdZA+iihYU2wPYsj5J6USY9NIwHOuf+SCXWBDLwwGcTpFK7yCcEkYFLKtu5jDYWC6QYJ6QXIgNojUBIUwVNcD/6xkSnjjOdTmtjEdekGjtBGkA7n2pWtE6pJFiIOmIuzsP0u6gmZKfrpRJlHvrzhU6z2+t3MJQG+z2mvydfg8y8/opxJxaGh/PnLi7XpA2pZvlzF5cvGAVyFqIwhZ8Lx5IbMK0hx9AUYy6w9FzaixSfkFThIFZBvTD0FkG4V1xgMZWJorhJkwzMLMLiMiFUNq3FuYi2nkpFYUp79mDZS04WQfqPXWN7yH4O4TNzKfFZk7qQmH2mw4SFYFuFKm5BpmcN/Vm1PHRucuGkgElP34ZReORSeBlQi37neDQdWqGft2+71GnaMOFijRpdAT4x6hM6fzK1BNJlgS+1Of1w/OHYKUZyNsFZStISMJsCKHOvsgzPmibDrBBpHfK+4ILODOaaRNm1TRtuSD6cM03Zsp0sVWhH6G1MXVaYJZh2MsUqED1KnpGQVSFBSQKDRru1EUte1aWA88nt8Zyk7lmxR7FwLSUYDNxcGWVb7upKlqsbk1Bd8KsukFUg2eI5FRh9+AjKv0QKx4OQGdcv7zt/96f92tE/v5VP81+V55Pqyct8fFh5Pqaxs78KpFIpBLYf4ys5Jd5TaD65mFwF5f2WmLCAtLFwbXlAUzHuV+pz95fS/OeBoWwefbJCPwNNLSTMqLz/q3YUamNB0ErBMzNfFuLZWvuumG+S0dkPWnsVWC6js2KvrxjNVXBWbP4C0+T1Iu36KzSk+s1nwHw2VV7In0hSB8n28yWFJlYiXcsmf6SsMZKmrPeaMLIgGfyDBal1vJ3EVNO1ZUudnye2zVcOeEiO3NoWZtnOK76vEiEaA5XZ69S+XNlMyEJcCV1OSFbeTm/lMnoTvRXfrfT8zH4Heiuhf5pe8Tp/ldua9IqeW5kZa7wDrWLQn+a0/ibwpqqtu2+lVzh3diC5vsEKVSLLhnQb2EsxfYNpLJ9RPTqjSmns5N6A80a3dZFudAbvktG7emGdXnNvBzTd/GLXFyMyevkfzP4itg==</source>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="global" full_name="global"/>
+  <package name="jBpm4Php" full_name="jBpm4Php">
+    <package name="REST" full_name="jBpm4Php\REST">
+      <package name="Remote" full_name="jBpm4Php\REST\Remote">
+        <package name="Runtime" full_name="jBpm4Php\REST\Remote\Runtime"/>
+      </package>
+    </package>
+  </package>
+  <namespace name="jBpm4Php" full_name="jBpm4Php">
+    <namespace name="REST" full_name="jBpm4Php\REST">
+      <namespace name="Remote" full_name="jBpm4Php\REST\Remote">
+        <namespace name="Deployment" full_name="jBpm4Php\REST\Remote\Deployment"/>
+        <namespace name="History" full_name="jBpm4Php\REST\Remote\History"/>
+        <namespace name="Runtime" full_name="jBpm4Php\REST\Remote\Runtime"/>
+        <namespace name="Task" full_name="jBpm4Php\REST\Remote\Task"/>
+      </namespace>
+    </namespace>
+    <namespace name="Services" full_name="jBpm4Php\Services"/>
+  </namespace>
+  <deprecated count="0"/>
+</project>

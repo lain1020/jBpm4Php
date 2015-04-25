@@ -1,0 +1,143 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Copyright 2015 Fernando Lib&oacute;rio
+ * 
+ * This file is part of jBpm4Php.
+ *
+ * jBpm4Php is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * jBpm4Php is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;. 
+ */
+
+namespace jBpm4Php\REST\Remote\History;
+
+use \jBpm4Php\Services\Abstract_Rest_Command;
+
+class History_Service extends Abstract_Rest_Command
+{
+    /**
+     * Cleans (deletes) all history logs.
+     * @access public
+     */
+    public function clear()
+    {
+    	$url = sprintf(&quot;%s/history/clear&quot;, $this-&gt;engine-&gt;url);
+
+        return json_decode($this-&gt;execute($url, TRUE));
+    }
+
+    /**
+     * Gets a list of ProcessInstanceLog instances.
+     * @access public
+     * @return A JaxbHistoryLogList
+     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     */
+    public function get_processes()
+    {
+        $url = sprintf(&quot;%s/history/instances&quot;, $this-&gt;engine-&gt;url);
+
+        return json_decode($this-&gt;execute($url, FALSE));
+    }
+
+    /**
+     * Gets the ProcessInstanceLog instance associated with the specified process instance.
+     * @access public
+     * @return A JaxbHistoryLogList
+     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     */
+    public function get_process($process_id)
+    {
+        $url = sprintf(&quot;%s/history/instance/%s&quot;, 
+            $this-&gt;engine-&gt;url, 
+            $process_id
+        );
+
+        return json_decode($this-&gt;execute($url, FALSE));
+    }
+
+    /**
+     * Gets a list of ProcessInstanceLog instances associated with any child/sub-processes associated with 
+     * the specified process instance.
+     * @access public
+     * @return A JaxbHistoryLogList
+     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     */
+    public function get_childs($process_id)
+    {
+        $url = sprintf(&quot;%s/history/instance/%s/child&quot;, 
+            $this-&gt;engine-&gt;url, 
+            $process_id
+        );
+
+        return json_decode($this-&gt;execute($url, FALSE));
+    }
+
+    /**
+     * Gets a list of VariableInstanceLog instances associated with the specified process instance.
+     * @access public
+     * @return A JaxbHistoryLogList
+     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     */
+    public function get_variables($process_id)
+    {
+        $url = sprintf(&quot;%s/history/instance/%s/variable&quot;, 
+            $this-&gt;engine-&gt;url, 
+            $process_id
+        );
+
+        return json_decode($this-&gt;execute($url, FALSE));
+    }
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

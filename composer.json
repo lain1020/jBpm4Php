@@ -1,0 +1,5 @@
+{
+	"autoload": {
+        "psr-4": {"jBpm4Php\\": "src/jBpm4Php"}
+    }
+}

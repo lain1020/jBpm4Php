@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * Copyright 2015 Fernando Lib&oacute;rio
+ * 
+ * This file is part of jBpm4Php.
+ *
+ * jBpm4Php is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * jBpm4Php is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with jBpm4Php.  If not, see &lt;http://www.gnu.org/licenses/&gt;. 
+ */
+
+namespace jBpm4Php\Services;
+
+abstract class Abstract_Rest_Command implements Rest_Command_Interface
+{
+    private $engine;
+    
+    /**
+     * Constructor 
+     * @access public
+     * @param Runtime_Engine $engine
+     */
+    public function __construct(Runtime_Engine $engine)
+    {
+        $this-&gt;engine = $engine;
+    }
+
+    /**
+     * Getter
+     * @access public
+     * @param string $name 
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this-&gt;$name;
+    }
+
+    /**
+     * Makes REST calls to the execution server. All calls are described on the documentation.
+     * @link http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html Documentation
+     * @access public
+     * @param string $url 
+     * @param boolean $do_post 
+     * @param array $map
+     * @param string $xml_body
+     * @return A JSON response
+     */
+    public function execute($url, $do_post = TRUE, $map = NULL, $xml_body = NULL)
+    {
+        $context = curl_init();
+
+        $use_prefix = (strpos($url, 'query')) ? FALSE : TRUE;
+
+        $url.= $this-&gt;parse_query_map_parameters($map, $use_prefix);
+        
+        curl_setopt($context, CURLOPT_URL, $url);
+        curl_setopt($context, CURLOPT_USERPWD, sprintf(&quot;%s:%s&quot;, $this-&gt;engine-&gt;username, $this-&gt;engine-&gt;password));
+        curl_setopt($context, CURLOPT_FAILONERROR, TRUE);
+        curl_setopt($context, CURLOPT_FOLLOWLOCATION, TRUE);
+        curl_setopt($context, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($context, CURLOPT_POST, $do_post);
+        curl_setopt($context, CURLOPT_TIMEOUT, 999);
+
+        if (! is_null($xml_body)) {
+            curl_setopt($context, CURLOPT_POSTFIELDS, $xml_body);
+            curl_setopt($context, CURLOPT_HTTPHEADER, array('Content-type: text/xml'));
+        } else {
+            curl_setopt($context, CURLOPT_HTTPHEADER, array('ACCEPT: application/json'));
+        }
+
+        $response = curl_exec($context);
+        curl_close($context);
+
+        return $response;
+    }
+
+    /**
+     * Convert map associative array into query map parameters.
+     * @access private
+     * @param array $map 
+     * @return Query map parameters
+     */
+    private function parse_query_map_parameters($map, $with_prefix = TRUE)
+    {
+        $query_map = &quot;&quot;;
+
+        if (is_array($map)) {
+
+            foreach ($map as $key =&gt; $value) {
+                $query_map.= sprintf(&quot;%s=%s&amp;&quot;, $key, $value);
+            }
+
+            $query_map = preg_replace(&quot;/&amp;$/&quot;, &quot;&quot;, $query_map);
+            $query_map = ($with_prefix === TRUE) ? sprintf(&quot;?map_%s&quot;, $query_map) : sprintf(&quot;?%s&quot;, $query_map);
+        }
+
+        return $query_map;
+    }
+}</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>
