@@ -20,12 +20,20 @@
 
 namespace jBpm4Php\Services;
 
+/**
+ * Abstract Rest Command Class
+ *  
+ * @package jBpm4Php\Services
+ * @author  Fernando Libório 
+ * @license LGPL, version 3
+ */
 abstract class Abstract_Rest_Command implements Rest_Command_Interface
 {
     private $engine;
     
     /**
-     * Constructor 
+     * Constructor
+     * 
      * @access public
      * @param Runtime_Engine $engine
      */
@@ -36,6 +44,7 @@ abstract class Abstract_Rest_Command implements Rest_Command_Interface
 
     /**
      * Getter
+     * 
      * @access public
      * @param string $name 
      * @return mixed
@@ -46,14 +55,15 @@ abstract class Abstract_Rest_Command implements Rest_Command_Interface
     }
 
     /**
-     * Makes REST calls to the execution server. All calls are described on the documentation.
-     * @link http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html Documentation
+     * Makes REST calls to the execution server. All calls are described on the jBPM REST Call documentation.
+     * 
      * @access public
-     * @param string $url 
-     * @param boolean $do_post 
-     * @param array $map
-     * @param string $xml_body
-     * @return A JSON response
+     * @param  string $url 
+     * @param  boolean $do_post 
+     * @param  array $map
+     * @param  string $xml_body
+     * @return A JSON or XML response
+     * @link   http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html
      */
     public function execute($url, $do_post = TRUE, $map = NULL, $xml_body = NULL)
     {
@@ -86,8 +96,10 @@ abstract class Abstract_Rest_Command implements Rest_Command_Interface
 
     /**
      * Convert map associative array into query map parameters.
+     * 
      * @access private
-     * @param array $map 
+     * @param  array $map 
+     * @param  boolean $with_prefix 
      * @return Query map parameters
      */
     private function parse_query_map_parameters($map, $with_prefix = TRUE)

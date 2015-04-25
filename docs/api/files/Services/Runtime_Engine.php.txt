@@ -25,6 +25,13 @@ use \jBpm4Php\REST\Remote\Runtime\Runtime_Service;
 use \jBpm4Php\REST\Remote\History\History_Service;
 use \jBpm4Php\REST\Remote\Deployment\Deployment_Service;
 
+/**
+ * Runtime Engine Class
+ *  
+ * @package jBpm4Php\Services
+ * @author  Fernando Libório 
+ * @license LGPL, version 3
+ */
 class Runtime_Engine
 {
 	private $url;
@@ -35,12 +42,13 @@ class Runtime_Engine
 
 	/**
 	 * Constructor
+     * 
      * @access public 
-	 * @param string $url This is the URL of the deployed jbpm-console, kie-wb or BPMS instance. For example: http://localhost:8080/jbpm-console/
-	 * @param string $deployment_id This is the name (id) of the deployment the RuntimeEngine should interact with.
-	 * @param string $authentication_type Basic or Form Based
-	 * @param string $username This is the user name needed to access the REST API.
-	 * @param string $password This is the password needed to access the REST API.
+	 * @param  string $url This is the URL of the deployed jbpm-console, kie-wb or BPMS instance. For example: http://localhost:8080/jbpm-console/
+	 * @param  string $deployment_id This is the name (id) of the deployment the RuntimeEngine should interact with.
+	 * @param  string $authentication_type Basic or Form Based
+	 * @param  string $username This is the user name needed to access the REST API.
+	 * @param  string $password This is the password needed to access the REST API.
 	 */
     public function __construct($url, $deployment_id, $authentication_type, $username, $password) 
     {
@@ -57,8 +65,9 @@ class Runtime_Engine
 
     /**
      * Getter
+     * 
      * @access public
-     * @param mixed $name 
+     * @param  mixed $name 
      * @return mixed
      */
     public function __get($name) 
@@ -68,7 +77,9 @@ class Runtime_Engine
 
     /**
      * Returns a new instance of Runtime_Service class.
+     * 
      * @access public
+     * @see    Runtime_Service
      * @return Runtime_Service
      */
     public function get_runtime_service()
@@ -78,7 +89,9 @@ class Runtime_Engine
 
     /**
      * Returns a new instance of History_Service class.
+     * 
      * @access public
+     * @see    History_Service
      * @return History_Service
      */
     public function get_history_service()
@@ -88,7 +101,9 @@ class Runtime_Engine
 
     /**
      * Returns a new instance of Task_Service class.
+     * 
      * @access public 
+     * @see    Task_Service
      * @return Task_Service
      */
     public function get_task_service()
@@ -98,7 +113,9 @@ class Runtime_Engine
 
     /**
      * Returns a new instance of Deployment_Service class.
+     * 
      * @access public
+     * @see    Deployment_Service
      * @return Deployment_Service
      */
     public function get_deployment_service()
@@ -107,6 +124,13 @@ class Runtime_Engine
     }
 }
 
+/**
+ * Authentication Type Enumerator
+ *  
+ * @package jBpm4Php\Services
+ * @author  Fernando Libório 
+ * @license LGPL, version 3
+ */
 abstract class Authentication_Type
 {
     const BASIC      = 'BASIC';

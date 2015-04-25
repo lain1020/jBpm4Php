@@ -20,7 +20,25 @@
 
 namespace jBpm4Php\Services;
 
+/**
+ * Rest Command Interface
+ *  
+ * @package jBpm4Php\Services
+ * @author  Fernando Libório 
+ * @license LGPL, version 3
+ */
 Interface Rest_Command_Interface
 {
-    public function execute($url, $do_post = TRUE, $map = NULL);
+    /**
+     * Makes REST calls to the execution server. All calls are described on the jBPM REST Call documentation.
+     * 
+     * @access public
+     * @param  string $url 
+     * @param  boolean $do_post 
+     * @param  array $map
+     * @param  string $xml_body
+     * @return A JSON or XML response
+     * @link   http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html
+     */
+    public function execute($url, $do_post = TRUE, $map = NULL, $xml_body = NULL);
 }

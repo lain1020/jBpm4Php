@@ -22,14 +22,22 @@ namespace jBpm4Php\REST\Remote\Task;
 
 use \jBpm4Php\Services\Abstract_Rest_Command;
 
+/**
+ * Runtime Task Calls
+ *  
+ * @package jBpm4Php\REST\Remote\Task
+ * @author  Fernando Libório 
+ * @license LGPL, version 3
+ */
 class Task_Service extends Abstract_Rest_Command
 {
 	/**
-     * Activates a task
+     * Activates a task.
+     * 
      * @access public
-     * @param string $task_id 
+     * @param  string $task_id 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function activate($task_id)
     {
@@ -42,11 +50,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Claims a task
+     * Claims a task.
+     * 
      * @access public
-     * @param string $task_id 
+     * @param  string $task_id 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function claim($task_id)
     {
@@ -59,12 +68,13 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Claims the next available task
+     * Claims the next available task.
+     * 
      * @access public
-     * @param string $task_id
-     * @param string $lang 
+     * @param  string $task_id
+     * @param  string $lang 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function claim_next_available($task_id, $lang = 'en-UK')
     {
@@ -79,12 +89,13 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Completes a task
+     * Completes a task.
+     * 
      * @access public
-     * @param string $task_id
-     * @param array $map You can only pass basic types (as map query parameters) 
+     * @param  string $task_id
+     * @param  array $map You can only pass basic types. 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function complete($task_id, $map = NULL)
     {
@@ -97,12 +108,13 @@ class Task_Service extends Abstract_Rest_Command
     }
 
 	/**
-     * Delegates a task
+     * Delegates a task.
+     * 
      * @access public
-     * @param string $task_id
-     * @param string $target_id Identifies the user or group to which the task is delegated 
+     * @param  string $task_id
+     * @param  string $target_id Identifies the user or group to which the task is delegated 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function delegate($task_id, $target_id)
     {
@@ -115,11 +127,12 @@ class Task_Service extends Abstract_Rest_Command
     }    
 
     /**
-     * Exits a task
+     * Exits a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function exit_task($task_id)
     {
@@ -132,11 +145,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Fails a task
+     * Fails a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function fail($task_id)
     {
@@ -149,12 +163,13 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Delegates a task
+     * Delegates a task.
+     * 
      * @access public
-     * @param string $task_id
-     * @param string $target_id Identifies the user or group to which the task is forwarded 
+     * @param  string $task_id
+     * @param  string $target_id Identifies the user or group to which the task is forwarded 
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function forward($task_id, $target_id)
     {
@@ -167,12 +182,13 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Nominates a task
+     * Nominates a task.
+     * 
      * @access public
-     * @param string $task_id
-     * @param string $target_id Identifies the user(s) or group(s) that are nominated for the task
+     * @param  string $task_id
+     * @param  string $target_id Identifies the user(s) or group(s) that are nominated for the task
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function nominate($task_id, $target_id)
     {
@@ -185,11 +201,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Releases a task
+     * Releases a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function release($task_id)
     {
@@ -202,11 +219,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Resumes a task
+     * Resumes a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function resume($task_id)
     {
@@ -219,11 +237,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Skips a task
+     * Skips a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function skip($task_id)
     {
@@ -236,11 +255,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Starts a task
+     * Starts a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function start($task_id)
     {
@@ -253,11 +273,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Stops a task
+     * Stops a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function stop($task_id)
     {
@@ -270,11 +291,12 @@ class Task_Service extends Abstract_Rest_Command
     }
 
     /**
-     * Suspends a task
+     * Suspends a task.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbGenericResponse 
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
      */
     public function suspend($task_id)
     {
@@ -288,11 +310,12 @@ class Task_Service extends Abstract_Rest_Command
 
     /**
      * Checks that the task idetified by taskId exists and generates an URL to show the task form on a remote 
-     * application
+     * application.
+     * 
      * @access public
-     * @param string $task_id
+     * @param  string $task_id
      * @return A JaxbTaskFormResponse instance, that contains the URL to the task form
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskFormResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskFormResponse
      */
     public function show_task_form($task_id)
     {
@@ -306,11 +329,12 @@ class Task_Service extends Abstract_Rest_Command
 
     /**
      * The returned tasks should have the potential owner identified by the parameter given.
+     * 
      * @access public
-     * @param string $owner
-     * @param string $lang
+     * @param  string $owner
+     * @param  string $lang
      * @return A list of TaskSummaryImpl instances
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote TaskSummaryImpl
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote TaskSummaryImpl
      */  
     public function get_tasks($owner, $lang = 'en-UK')
     {
@@ -326,11 +350,11 @@ class Task_Service extends Abstract_Rest_Command
 
     /**
      * Queries the available non-archived tasks.
-     * @link http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html#remote.rest.task Parameters
+     * 
      * @access public
-     * @param array $map
+     * @param  array $map
      * @return A JaxbTaskSummaryListResponse with a list of TaskSummaryImpl instances
-     * @link https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskSummaryListResponse
+     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskSummaryListResponse
      */
     public function query($map)
     {
