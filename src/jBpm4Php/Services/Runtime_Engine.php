@@ -31,6 +31,12 @@ use \jBpm4Php\REST\Remote\Deployment\Deployment_Service;
  * @package jBpm4Php\Services
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * 
+ * @property-read string $url
+ * @property-read string $deployment_id
+ * @property-read string $authentication_type
+ * @property-read string $username
+ * @property-read string $password
  */
 class Runtime_Engine
 {
@@ -79,7 +85,6 @@ class Runtime_Engine
      * Returns a new instance of Runtime_Service class.
      * 
      * @access public
-     * @see    Runtime_Service
      * @return Runtime_Service
      */
     public function get_runtime_service()
@@ -91,7 +96,6 @@ class Runtime_Engine
      * Returns a new instance of History_Service class.
      * 
      * @access public
-     * @see    History_Service
      * @return History_Service
      */
     public function get_history_service()
@@ -103,7 +107,6 @@ class Runtime_Engine
      * Returns a new instance of Task_Service class.
      * 
      * @access public 
-     * @see    Task_Service
      * @return Task_Service
      */
     public function get_task_service()
@@ -115,7 +118,6 @@ class Runtime_Engine
      * Returns a new instance of Deployment_Service class.
      * 
      * @access public
-     * @see    Deployment_Service
      * @return Deployment_Service
      */
     public function get_deployment_service()

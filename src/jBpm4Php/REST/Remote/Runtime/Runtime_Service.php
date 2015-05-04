@@ -28,6 +28,8 @@ use \jBpm4Php\Services\Abstract_Rest_Command;
  * @package jBpm4Php\REST\Remote\Runtime
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * @link    http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html jBPM REST Call documentation
+ * @link    https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote All objects returned are described on the Kie Remote API (Java)
  */
 class Runtime_Service extends Abstract_Rest_Command
 {
@@ -36,9 +38,8 @@ class Runtime_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $process_def_id 
-     * @param  array $map 
-     * @return A JaxbProcessInstanceWithVariablesResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbProcessInstanceWithVariablesResponse
+     * @param  array  $map 
+     * @return object A JaxbProcessInstanceWithVariablesResponse
      */
     public function start_process($process_def_id, $map = NULL)
     {
@@ -56,9 +57,8 @@ class Runtime_Service extends Abstract_Rest_Command
      * process instance has been completed.
      * 
      * @access public
-     * @param  long $process_id 
-     * @return A JaxbProcessInstanceWithVariablesResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbProcessInstanceWithVariablesResponse
+     * @param  long   $process_id 
+     * @return object A JaxbProcessInstanceWithVariablesResponse
      */
     public function get_process_instance($process_id)
     {
@@ -74,9 +74,8 @@ class Runtime_Service extends Abstract_Rest_Command
      * Aborts the process instance.
      * 
      * @access public
-     * @param  long $process_id 
-     * @return Returns a JaxbGenericResponse indicating whether or not the operation has succeeded
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbProcessInstanceWithVariablesResponse JaxbGenericResponse
+     * @param  long   $process_id 
+     * @return object A JaxbGenericResponse indicating whether or not the operation has succeeded
      */
     public function abort_process($process_id)
     {
@@ -91,10 +90,9 @@ class Runtime_Service extends Abstract_Rest_Command
     /**
      * Signals the process instance.
      * 
-     * @param  long $process_id 
-     * @param  array $map 
-     * @return Returns a JaxbGenericResponse indicating whether or not the operation has succeeded.
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse JaxbGenericResponse
+     * @param  long   $process_id 
+     * @param  array  $map 
+     * @return object A JaxbGenericResponse indicating whether or not the operation has succeeded.
      */
     public function signal($process_id, $map)
     {

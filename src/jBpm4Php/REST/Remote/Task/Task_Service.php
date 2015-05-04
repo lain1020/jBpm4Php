@@ -28,6 +28,8 @@ use \jBpm4Php\Services\Abstract_Rest_Command;
  * @package jBpm4Php\REST\Remote\Task
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * @link    http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html jBPM REST Call documentation
+ * @link    https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote All objects returned are described on the Kie Remote API (Java)
  */
 class Task_Service extends Abstract_Rest_Command
 {
@@ -36,8 +38,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse
      */
     public function activate($task_id)
     {
@@ -54,8 +55,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse
      */
     public function claim($task_id)
     {
@@ -73,8 +73,7 @@ class Task_Service extends Abstract_Rest_Command
      * @access public
      * @param  string $task_id
      * @param  string $lang 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse
      */
     public function claim_next_available($task_id, $lang = 'en-UK')
     {
@@ -93,9 +92,8 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @param  array $map You can only pass basic types. 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @param  array  $map You can only pass basic types. 
+     * @return object A JaxbGenericResponse 
      */
     public function complete($task_id, $map = NULL)
     {
@@ -113,8 +111,7 @@ class Task_Service extends Abstract_Rest_Command
      * @access public
      * @param  string $task_id
      * @param  string $target_id Identifies the user or group to which the task is delegated 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse
      */
     public function delegate($task_id, $target_id)
     {
@@ -131,8 +128,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function exit_task($task_id)
     {
@@ -149,8 +145,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function fail($task_id)
     {
@@ -168,8 +163,7 @@ class Task_Service extends Abstract_Rest_Command
      * @access public
      * @param  string $task_id
      * @param  string $target_id Identifies the user or group to which the task is forwarded 
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function forward($task_id, $target_id)
     {
@@ -187,8 +181,7 @@ class Task_Service extends Abstract_Rest_Command
      * @access public
      * @param  string $task_id
      * @param  string $target_id Identifies the user(s) or group(s) that are nominated for the task
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function nominate($task_id, $target_id)
     {
@@ -205,8 +198,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function release($task_id)
     {
@@ -223,8 +215,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function resume($task_id)
     {
@@ -241,8 +232,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse      
      */
     public function skip($task_id)
     {
@@ -259,8 +249,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function start($task_id)
     {
@@ -277,8 +266,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function stop($task_id)
     {
@@ -295,8 +283,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbGenericResponse 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbGenericResponse
+     * @return object A JaxbGenericResponse 
      */
     public function suspend($task_id)
     {
@@ -314,8 +301,7 @@ class Task_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $task_id
-     * @return A JaxbTaskFormResponse instance, that contains the URL to the task form
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskFormResponse
+     * @return object A JaxbTaskFormResponse instance, that contains the URL to the task form
      */
     public function show_task_form($task_id)
     {
@@ -333,8 +319,7 @@ class Task_Service extends Abstract_Rest_Command
      * @access public
      * @param  string $owner
      * @param  string $lang
-     * @return A list of TaskSummaryImpl instances
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote TaskSummaryImpl
+     * @return object A list of TaskSummaryImpl instances
      */  
     public function get_tasks($owner, $lang = 'en-UK')
     {
@@ -352,9 +337,8 @@ class Task_Service extends Abstract_Rest_Command
      * Queries the available non-archived tasks.
      * 
      * @access public
-     * @param  array $map
-     * @return A JaxbTaskSummaryListResponse with a list of TaskSummaryImpl instances
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbTaskSummaryListResponse
+     * @param  array  $map
+     * @return object A JaxbTaskSummaryListResponse with a list of TaskSummaryImpl instances
      */
     public function query($map)
     {

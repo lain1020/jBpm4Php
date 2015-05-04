@@ -28,6 +28,8 @@ use \jBpm4Php\Services\Abstract_Rest_Command;
  * @package jBpm4Php\REST\Remote\Deployment
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * @link    http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html jBPM REST Call documentation
+ * @link    https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote All objects returned are described on the Kie Remote API (Java)
  */
 class Deployment_Service extends Abstract_Rest_Command
 {
@@ -35,8 +37,7 @@ class Deployment_Service extends Abstract_Rest_Command
      * Returns a list of all the available deployed instances in a JaxbDeploymentUnitList instance.
      * 
      * @access public
-     * @return A JaxbDeploymentUnitList 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbDeploymentUnitList
+     * @return object A JaxbDeploymentUnitList 
      */
     public function get_deployed_units()
     {
@@ -50,8 +51,7 @@ class Deployment_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $deployment_id
-     * @return A JaxbDeploymentUnit 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbDeploymentUnit
+     * @return object A JaxbDeploymentUnit
      */
     public function get_deployment($deployment_id)
     {
@@ -65,9 +65,8 @@ class Deployment_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $deployment_id
-     * @param  array $map Deployment descriptor as a key-value pair: array('audit-mode'=>'JMS', 'runtime-strategy'=>'PER_PROCESS_INSTANCE'); 
-     * @return A JaxbDeploymentJobResult 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbDeploymentJobResult
+     * @param  array  $map Deployment descriptor as a key-value pair: array('audit-mode'=>'JMS', 'runtime-strategy'=>'PER_PROCESS_INSTANCE'); 
+     * @return object A JaxbDeploymentJobResult
      */
     public function deploy($deployment_id, $map = NULL)
     {
@@ -87,8 +86,7 @@ class Deployment_Service extends Abstract_Rest_Command
      * 
      * @access public
      * @param  string $deployment_id
-     * @return A JaxbDeploymentJobResult 
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbDeploymentJobResult
+     * @return object A JaxbDeploymentJobResult 
      */
     public function undeploy($deployment_id)
     {

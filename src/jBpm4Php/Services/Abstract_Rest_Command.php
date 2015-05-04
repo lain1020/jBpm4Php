@@ -26,6 +26,9 @@ namespace jBpm4Php\Services;
  * @package jBpm4Php\Services
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * @link    http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html jBPM REST Call documentation
+ * 
+ * @property-read Runtime_Engine $engine
  */
 abstract class Abstract_Rest_Command implements Rest_Command_Interface
 {
@@ -62,8 +65,7 @@ abstract class Abstract_Rest_Command implements Rest_Command_Interface
      * @param  boolean $do_post 
      * @param  array $map
      * @param  string $xml_body
-     * @return A JSON or XML response
-     * @link   http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html
+     * @return string A JSON or XML response
      */
     public function execute($url, $do_post = TRUE, $map = NULL, $xml_body = NULL)
     {

@@ -28,6 +28,8 @@ use \jBpm4Php\Services\Abstract_Rest_Command;
  * @package jBpm4Php\REST\Remote\History
  * @author  Fernando Libório 
  * @license LGPL, version 3
+ * @link    http://docs.jboss.com/jbpm/v6.2/userguide/jBPMRemoteAPI.html jBPM REST Call documentation
+ * @link    https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote All objects returned are described on the Kie Remote API (Java)
  */
 class History_Service extends Abstract_Rest_Command
 {
@@ -47,8 +49,7 @@ class History_Service extends Abstract_Rest_Command
      * Gets a list of ProcessInstanceLog instances.
      * 
      * @access public
-     * @return A JaxbHistoryLogList
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     * @return object A JaxbHistoryLogList
      */
     public function get_processes()
     {
@@ -61,9 +62,8 @@ class History_Service extends Abstract_Rest_Command
      * Gets the ProcessInstanceLog instance associated with the specified process instance.
      * 
      * @access public
-     * @param  long $process_id
-     * @return A JaxbHistoryLogList
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     * @param  long   $process_id
+     * @return object A JaxbHistoryLogList
      */
     public function get_process($process_id)
     {
@@ -80,9 +80,8 @@ class History_Service extends Abstract_Rest_Command
      * the specified process instance.
      * 
      * @access public
-     * @param  long $process_id
-     * @return A JaxbHistoryLogList
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     * @param  long   $process_id
+     * @return object A JaxbHistoryLogList
      */
     public function get_childs($process_id)
     {
@@ -98,9 +97,8 @@ class History_Service extends Abstract_Rest_Command
      * Gets a list of VariableInstanceLog instances associated with the specified process instance.
      * 
      * @access public
-     * @param  long $process_id
-     * @return A JaxbHistoryLogList
-     * @link   https://github.com/droolsjbpm/droolsjbpm-integration/tree/6.2.x/kie-remote JaxbHistoryLogList
+     * @param  long   $process_id
+     * @return object A JaxbHistoryLogList
      */
     public function get_variables($process_id)
     {
